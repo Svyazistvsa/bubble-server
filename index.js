@@ -19,7 +19,7 @@ app.post("/mssg", function (req, res){
 
 const options = {
     key: fs.readFileSync('server.key'),
-    cert: fs.readFileSync('server.cert'),
+    cert: fs.readFileSync('server.pem'),
 };
 
 https.createServer(options, app).listen(3000, function (req, res) {
