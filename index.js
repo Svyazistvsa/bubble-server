@@ -15,12 +15,23 @@ app.use(bodyParser.json());
 
 app.get("/", function(req, res){
     
-    res.sendFile(__dirname, '/index.html');
+    res.send(`<body>
+    <h1>Welcome to HTTPS Server</h1>
+    <br><br>
+    <h3>Enter your message</h3>
+
+    <!--  sending post request to "mssg" with 
+        the message from the textarea -->
+    <form action="mssg" method="post">
+        <textarea name="message" id="" 
+            cols="30" rows="10"></textarea>
+        <button type="submit">Send</button>
+    </form>
+</body>`);
 });
 
 app.post("/mssg", function (req, res){
     console.log(req.body);
-    res.setHeader("Access-Control-Allow-Origin", "http://localhost:9000/main.bundle.js");
     res.redirect('/');
 });
 
