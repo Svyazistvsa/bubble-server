@@ -2,11 +2,11 @@ const https = require('https');
 const express = require('express');
 const app = express();
 const fs = require('fs');
-const bodyParser = require('body-parser');
+const bodyParser = require('body-parser');  
 
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "http://localhost:9000/");
-    res.header("Access-Control-Allow-Metods", "GET, POST");
+    res.header("Access-Control-Allow-Methods", "GET, POST");
     res.header("Access-Control-Allow-Headers", "Content-Type");
 })
 app.use(express.static(__dirname));
